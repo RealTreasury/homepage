@@ -55,7 +55,7 @@
         }
 
         .section-lg { 
-            padding: 120px 0; 
+            padding: 80px 0; 
         }
 
         /* Enhanced Frosted Glass Button Styles */
@@ -210,10 +210,10 @@
             width: 100vw;
         }
 
-        /* Hero Section - Enhanced */
+        /* Hero Section - Reduced Padding */
         .hero {
             background: var(--gradient-light);
-            padding: 140px 0 120px;
+            padding: 80px 0 60px;
             position: relative;
             overflow: hidden;
         }
@@ -325,12 +325,12 @@
         /* Features Section - Redesigned */
         .features {
             background: var(--light-bg);
-            padding: 120px 0;
+            padding: 80px 0;
         }
 
         .features-header { 
             text-align: center; 
-            margin-bottom: 80px;
+            margin-bottom: 60px;
         }
 
         .features-header h2 { 
@@ -458,7 +458,7 @@
 
         /* About Section - Enhanced */
         .about-preview { 
-            padding: 120px 0; 
+            padding: 80px 0; 
             background: var(--white);
         }
 
@@ -493,14 +493,21 @@
                 0 0 0 1px rgba(199, 125, 255, 0.3);
         }
 
-        /* Testimonials - Enhanced */
+        /* Testimonials - Frosted Glass Effect */
         .testimonials {
-            background: var(--gradient-primary);
-            padding: 100px 0;
-            color: var(--white);
+            background: linear-gradient(135deg, 
+                rgba(114, 22, 244, 0.15) 0%, 
+                rgba(143, 71, 246, 0.12) 50%,
+                rgba(199, 125, 255, 0.1) 100%);
+            backdrop-filter: blur(25px) saturate(120%);
+            -webkit-backdrop-filter: blur(25px) saturate(120%);
+            padding: 80px 0;
+            color: var(--dark-text);
             text-align: center;
             position: relative;
             overflow: hidden;
+            border-top: 1px solid rgba(199, 125, 255, 0.2);
+            border-bottom: 1px solid rgba(199, 125, 255, 0.2);
         }
 
         .testimonials::before {
@@ -510,7 +517,7 @@
             left: 0;
             right: 0;
             height: 50%;
-            background: linear-gradient(180deg, rgba(255,255,255,0.1) 0%, transparent 100%);
+            background: linear-gradient(180deg, rgba(255,255,255,0.15) 0%, transparent 100%);
             pointer-events: none;
         }
 
@@ -519,6 +526,29 @@
             margin: 0 auto;
             position: relative;
             z-index: 2;
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.8) 0%, 
+                rgba(248, 248, 248, 0.9) 50%,
+                rgba(255, 255, 255, 0.8) 100%);
+            backdrop-filter: blur(20px) saturate(130%);
+            -webkit-backdrop-filter: blur(20px) saturate(130%);
+            padding: 48px 40px;
+            border-radius: 24px;
+            border: 2px solid rgba(199, 125, 255, 0.25);
+            box-shadow: 
+                0 12px 40px rgba(114, 22, 244, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+        }
+
+        .testimonial-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-purple) 0%, var(--secondary-purple) 50%, var(--light-purple) 100%);
+            border-radius: 24px 24px 0 0;
         }
 
         .testimonial-quote {
@@ -527,17 +557,20 @@
             margin-bottom: 40px;
             line-height: 1.6;
             font-weight: 500;
+            color: var(--dark-text);
         }
 
         .testimonial-author { 
             font-weight: 700; 
             font-size: 1.2rem;
+            color: var(--primary-purple);
         }
 
         .testimonial-role { 
             opacity: 0.8; 
             margin-top: 8px;
             font-size: 1rem;
+            color: var(--gray-text);
         }
 
         /* CTA Section - Enhanced */
@@ -608,8 +641,8 @@
 
         .edit-indicator {
             position: fixed;
-            top: 20px;
-            left: 20px;
+            bottom: 90px;
+            left: 30px;
             background: rgba(114, 22, 244, 0.95);
             color: var(--white);
             padding: 10px 18px;
@@ -620,13 +653,234 @@
             -webkit-backdrop-filter: blur(20px);
             z-index: 9998;
             border: 1px solid rgba(199, 125, 255, 0.3);
-            animation: pulse 2s infinite;
             box-shadow: 0 4px 16px rgba(114, 22, 244, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            user-select: none;
         }
 
-        @keyframes pulse { 
-            0%, 100% { opacity: 1; } 
-            50% { opacity: 0.7; } 
+        .edit-indicator:hover {
+            background: rgba(143, 71, 246, 0.95);
+            transform: translateY(-2px) scale(1.05);
+        }
+
+        .edit-indicator.edit-off {
+            background: rgba(108, 117, 125, 0.9);
+            border-color: rgba(108, 117, 125, 0.3);
+        }
+
+        .edit-indicator.edit-off:hover {
+            background: rgba(134, 142, 150, 0.95);
+        }
+
+        /* Enhanced Creative Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes iconSpin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Enhanced Hero Section */
+        .hero-image {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 24px;
+            box-shadow: 
+                0 24px 48px rgba(114, 22, 244, 0.15),
+                0 0 0 1px rgba(199, 125, 255, 0.2);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .hero-image img:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 
+                0 40px 80px rgba(114, 22, 244, 0.25),
+                0 0 0 1px rgba(199, 125, 255, 0.4);
+        }
+
+        /* Enhanced Feature Icons with Hover Animation */
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 32px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .feature-icon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(180deg, rgba(255,255,255,0.2) 0%, transparent 100%);
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 8px 25px rgba(114, 22, 244, 0.4);
+        }
+
+        .feature-card:hover .feature-icon svg {
+            animation: iconSpin 0.6s ease-in-out;
+        }
+
+        /* Enhanced Stats with Stagger Animation */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 60px;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 20px;
+            border-radius: 20px;
+            transition: all 0.4s ease;
+            animation: slideUp 0.6s ease-out;
+        }
+
+        .stat-item:nth-child(1) { animation-delay: 0.1s; }
+        .stat-item:nth-child(2) { animation-delay: 0.2s; }
+        .stat-item:nth-child(3) { animation-delay: 0.3s; }
+        .stat-item:nth-child(4) { animation-delay: 0.4s; }
+
+        .stat-item:hover {
+            transform: translateY(-8px) scale(1.05);
+            background: linear-gradient(135deg, 
+                rgba(114, 22, 244, 0.05) 0%, 
+                rgba(143, 71, 246, 0.08) 100%);
+            border-radius: 20px;
+            box-shadow: 0 12px 30px rgba(114, 22, 244, 0.15);
+        }
+
+        /* Enhanced About Image */
+        .about-image {
+            position: relative;
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: 20px;
+            bottom: 20px;
+            background: var(--gradient-primary);
+            border-radius: 24px;
+            opacity: 0.1;
+            z-index: -1;
+            transition: all 0.4s ease;
+        }
+
+        .about-image:hover::before {
+            opacity: 0.15;
+            transform: rotate(-2deg);
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 24px;
+            box-shadow: 
+                0 20px 40px rgba(114, 22, 244, 0.15),
+                0 0 0 1px rgba(199, 125, 255, 0.2);
+            transition: all 0.4s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .about-image img:hover {
+            transform: translateY(-8px) rotate(1deg);
+            box-shadow: 
+                0 32px 64px rgba(114, 22, 244, 0.25),
+                0 0 0 1px rgba(199, 125, 255, 0.4);
+        }
+
+        /* Enhanced CTA Section */
+        .cta {
+            background: var(--light-bg);
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(114, 22, 244, 0.03) 0%, transparent 70%);
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Enhanced Button Interactions */
+        .btn {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:hover::after {
+            width: 300px;
+            height: 300px;
+        }
+
+        /* Testimonial Enhanced Effects */
+        .testimonial-card {
+            transition: all 0.4s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 
+                0 20px 50px rgba(114, 22, 244, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9);
         }
 
         /* Mobile Optimization */
@@ -669,7 +923,7 @@
             }
             
             .hero { 
-                padding: 100px 0 80px; 
+                padding: 60px 0 50px; 
             }
             
             .hero-content { 
@@ -712,8 +966,8 @@
             }
             
             .edit-indicator { 
-                top: 10px; 
-                left: 10px; 
+                bottom: 85px; 
+                left: 20px; 
                 padding: 8px 14px; 
                 font-size: 0.75rem; 
             }
@@ -727,7 +981,7 @@
             }
             
             .section-lg {
-                padding: 80px 0;
+                padding: 60px 0;
             }
         }
 
@@ -772,7 +1026,9 @@
             
             .edit-indicator { 
                 font-size: 0.7rem; 
-                padding: 6px 10px; 
+                padding: 6px 10px;
+                bottom: 80px;
+                left: 15px;
             }
             
             [contenteditable="true"] { 
@@ -793,7 +1049,7 @@
     </style>
 </head>
 <body>
-    <div class="edit-indicator">✏️ Edit Mode Active</div>
+    <button class="edit-indicator" onclick="toggleEditMode()" id="editToggle">✏️ Edit Mode ON</button>
 
     <!-- Hero Section -->
     <section class="hero full-bg-section section-lg">
@@ -874,7 +1130,7 @@
                 </div>
 
                 <!-- 15-Minute Strategy Call -->
-                <a href="/book-call" class="feature-card" tabindex="0">
+                <a href="https://outlook.office.com/book/RealTreasuryMeeting@realtreasury.com/s/LgF7vpFIP0qANup2hPHi_g2?ismsaljsauthenabled" target="_blank" class="feature-card" tabindex="0">
                     <div class="feature-icon">
                         <svg class="icon-phone" viewBox="0 0 24 24">
                             <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
@@ -938,6 +1194,9 @@
     </button>
 
     <script>
+        // Global edit mode state
+        let editModeEnabled = true;
+
         document.addEventListener('DOMContentLoaded', function() {
             console.log('Real Treasury Homepage loaded - Fresh Design Active');
             
@@ -945,7 +1204,9 @@
             const editableElements = document.querySelectorAll('[contenteditable="true"]');
             editableElements.forEach(element => {
                 element.addEventListener('focus', function() {
-                    this.style.boxShadow = '0 0 0 4px rgba(114, 22, 244, 0.2)';
+                    if (editModeEnabled) {
+                        this.style.boxShadow = '0 0 0 4px rgba(114, 22, 244, 0.2)';
+                    }
                 });
                 
                 element.addEventListener('blur', function() {
@@ -953,6 +1214,31 @@
                 });
             });
         });
+
+        // Toggle Edit Mode Function
+        function toggleEditMode() {
+            const editButton = document.getElementById('editToggle');
+            const editableElements = document.querySelectorAll('[contenteditable="true"]');
+            
+            editModeEnabled = !editModeEnabled;
+            
+            if (editModeEnabled) {
+                // Enable edit mode
+                editableElements.forEach(el => {
+                    el.setAttribute('contenteditable', 'true');
+                });
+                editButton.innerHTML = '✏️ Edit Mode ON';
+                editButton.classList.remove('edit-off');
+            } else {
+                // Disable edit mode
+                editableElements.forEach(el => {
+                    el.setAttribute('contenteditable', 'false');
+                    el.style.boxShadow = ''; // Remove any active focus styles
+                });
+                editButton.innerHTML = '👁️ Edit Mode OFF';
+                editButton.classList.add('edit-off');
+            }
+        }
 
         // Enhanced Save Function
         function saveHTML() {
@@ -980,6 +1266,11 @@
 
         // Image Editing Function
         function editImage(button) {
+            if (!editModeEnabled) {
+                alert('Please enable Edit Mode to change images');
+                return;
+            }
+            
             const img = button.previousElementSibling;
             const currentSrc = img.src;
             
@@ -1004,12 +1295,17 @@
                 e.preventDefault();
                 saveHTML();
             }
+            // Toggle edit mode with Ctrl/Cmd + E
+            if ((e.ctrlKey || e.metaKey) && e.key === 'e') {
+                e.preventDefault();
+                toggleEditMode();
+            }
         });
 
         // Auto-save functionality
         let autoSaveTimer;
         document.addEventListener('input', function(e) {
-            if (e.target.contentEditable === 'true') {
+            if (e.target.contentEditable === 'true' && editModeEnabled) {
                 clearTimeout(autoSaveTimer);
                 autoSaveTimer = setTimeout(() => {
                     console.log('Auto-save triggered (enable by uncommenting saveHTML() below)');
@@ -1026,6 +1322,14 @@
                     this.click();
                 }
             });
+        });
+
+        // Prevent editing when edit mode is off
+        document.addEventListener('click', function(e) {
+            if (e.target.hasAttribute('contenteditable') && !editModeEnabled) {
+                e.preventDefault();
+                return false;
+            }
         });
     </script>
 </body>
