@@ -1,14 +1,22 @@
-<html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Real Treasury – Select Smarter Treasury Technology</title>
-    <meta name="description" content="Independent treasury technology consulting. Access 150+ vendor demos, live workshops, and RFP tools. Helping finance teams select the right treasury tech faster.">
+    <title>Real Treasury – Independent Treasury Technology Consulting | Select Smarter</title>
+    <meta name="description" content="Independent treasury technology consulting. Access 50+ vendor demos, live workshops, and expert guidance. Helping finance teams select the right treasury tech faster with unbiased recommendations.">
+    <meta name="keywords" content="treasury technology, treasury management system, TMS selection, treasury consulting, cash management, vendor selection, treasury tools">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Real Treasury – Independent Treasury Technology Consulting">
+    <meta property="og:description" content="Independent treasury technology consulting. Access 50+ vendor demos and expert guidance to select the right treasury tech faster.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://realtreasury.com">
+    <link rel="canonical" href="https://realtreasury.com">
     
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
-        /* Core Variables - Matching Brand CSS */
         :root {
             --primary-purple: #7216f4;
             --secondary-purple: #8f47f6;
@@ -17,13 +25,14 @@
             --gray-text: #7e7e7e;
             --white: #ffffff;
             --light-bg: #f8f8f8;
+            --gradient-primary: linear-gradient(135deg, #7216f4 0%, #8f47f6 100%);
+            --gradient-light: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
         }
 
-        /* Global Reset & Typography */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
         }
 
         body {
@@ -35,30 +44,29 @@
             -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Container & Section Utilities */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 0 24px; 
         }
 
-        .section {
-            padding: 80px 0;
+        .section { 
+            padding: 80px 0; 
         }
 
-        .section-lg {
-            padding: 120px 0;
+        .section-lg { 
+            padding: 120px 0; 
         }
 
-        /* Frosted Glass Button Styles */
+        /* Enhanced Frosted Glass Button Styles */
         .btn {
             display: inline-block;
-            padding: 16px 32px;
+            padding: 18px 36px;
             font-weight: 600;
             font-size: 1rem;
             text-decoration: none;
-            border-radius: 12px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 16px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             border: 1px solid rgba(255, 255, 255, 0.2);
             cursor: pointer;
             text-align: center;
@@ -66,98 +74,74 @@
             text-transform: uppercase;
             position: relative;
             overflow: hidden;
-            
-            /* Frosted Glass Base */
             background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            box-shadow: 
-                0 4px 20px rgba(0, 0, 0, 0.1),
-                inset 0 1px 0 rgba(255, 255, 255, 0.2),
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow:
+                0 8px 32px rgba(0, 0, 0, 0.12),
+                inset 0 1px 0 rgba(255, 255, 255, 0.25),
                 inset 0 -1px 0 rgba(0, 0, 0, 0.1);
         }
 
         .btn::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
+            top: 0; left: 0; right: 0;
             height: 50%;
-            background: linear-gradient(180deg, 
-                rgba(255, 255, 255, 0.15) 0%, 
-                transparent 100%);
+            background: linear-gradient(180deg, rgba(255,255,255,0.2) 0%, transparent 100%);
             pointer-events: none;
+            border-radius: 16px 16px 0 0;
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, 
-                rgba(114, 22, 244, 0.8) 0%, 
-                rgba(143, 71, 246, 0.8) 100%);
+            background: linear-gradient(135deg, rgba(114,22,244,0.9) 0%, rgba(143,71,246,0.9) 100%);
             color: var(--white);
-            border: 1px solid rgba(199, 125, 255, 0.3);
+            border: 1px solid rgba(199,125,255,0.4);
             box-shadow: 
-                0 4px 20px rgba(114, 22, 244, 0.3),
-                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+                0 8px 32px rgba(114,22,244,0.3),
+                inset 0 1px 0 rgba(255,255,255,0.25);
         }
 
         .btn-primary:hover {
-            transform: translateY(-2px);
-            background: linear-gradient(135deg, 
-                rgba(143, 71, 246, 0.9) 0%, 
-                rgba(157, 78, 221, 0.9) 100%);
+            transform: translateY(-3px) scale(1.02);
+            background: linear-gradient(135deg, rgba(143,71,246,0.95) 0%, rgba(157,78,221,0.95) 100%);
             box-shadow: 
-                0 8px 28px rgba(114, 22, 244, 0.4),
-                inset 0 1px 0 rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+                0 12px 40px rgba(114,22,244,0.4),
+                inset 0 1px 0 rgba(255,255,255,0.3);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
         }
 
         .btn-outline {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255,255,255,0.1);
             color: var(--primary-purple);
-            border: 2px solid rgba(114, 22, 244, 0.4);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
+            border: 2px solid rgba(114,22,244,0.5);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
         }
 
         .btn-outline:hover {
-            background: rgba(114, 22, 244, 0.15);
+            background: rgba(114,22,244,0.15);
             color: var(--primary-purple);
-            transform: translateY(-2px);
-            border-color: rgba(114, 22, 244, 0.6);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            transform: translateY(-3px) scale(1.02);
+            border-color: rgba(114,22,244,0.7);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
         }
 
-        .btn-white {
-            background: rgba(255, 255, 255, 0.2);
-            color: var(--primary-purple);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-        }
-
-        .btn-white:hover {
-            transform: translateY(-2px);
-            background: rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-        }
-
-        /* Save Button - Fixed Position */
+        /* Save Button */
         .save-btn {
             position: fixed;
             bottom: 30px;
             right: 30px;
             z-index: 9999;
             padding: 16px 20px;
-            background: rgba(114, 22, 244, 0.9);
+            background: rgba(114, 22, 244, 0.95);
             color: var(--white);
             border: 1px solid rgba(199, 125, 255, 0.4);
             border-radius: 50px;
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
             box-shadow: 
                 0 8px 32px rgba(114, 22, 244, 0.3),
                 inset 0 1px 0 rgba(255, 255, 255, 0.2);
@@ -172,56 +156,64 @@
             letter-spacing: normal;
         }
 
-        .save-btn:hover {
-            transform: translateY(-2px) scale(1.05);
-            background: rgba(143, 71, 246, 0.95);
-            box-shadow: 
-                0 12px 40px rgba(114, 22, 244, 0.4),
-                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        .save-btn:hover { 
+            transform: translateY(-2px) scale(1.05); 
+            background: rgba(143, 71, 246, 0.95); 
+            box-shadow: 0 12px 40px rgba(114, 22, 244, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3);
         }
 
-        .save-btn:active {
+        .save-btn:active { 
             transform: translateY(0) scale(1);
         }
 
         /* Typography */
-        h1, h2, h3 {
-            font-weight: 800;
-            line-height: 1.2;
+        h1, h2, h3 { 
+            font-weight: 800; 
+            line-height: 1.2; 
             color: var(--dark-text);
         }
 
-        h1 {
-            font-size: 3.5rem;
+        h1 { 
+            font-size: 4rem; 
             margin-bottom: 24px;
         }
 
-        h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+        h2 { 
+            font-size: 2.8rem; 
+            margin-bottom: 24px;
         }
 
-        h3 {
-            font-size: 1.5rem;
+        h3 { 
+            font-size: 1.6rem; 
             margin-bottom: 16px;
         }
 
-        p {
-            font-size: 1.125rem;
-            color: var(--gray-text);
-            line-height: 1.7;
+        p { 
+            font-size: 1.2rem; 
+            color: var(--gray-text); 
+            line-height: 1.7; 
             margin-bottom: 16px;
         }
 
-        .lead {
-            font-size: 1.25rem;
+        .lead { 
+            font-size: 1.4rem; 
             font-weight: 500;
         }
 
-        /* Hero Section */
+        /* Full Width Backgrounds */
+        .full-bg-section {
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            width: 100vw;
+        }
+
+        /* Hero Section - Enhanced */
         .hero {
-            background: linear-gradient(135deg, #f8f8f8 0%, var(--white) 100%);
-            padding: 140px 0 100px;
+            background: var(--gradient-light);
+            padding: 140px 0 120px;
             position: relative;
             overflow: hidden;
         }
@@ -229,124 +221,153 @@
         .hero::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 30% 20%, rgba(114, 22, 244, 0.05) 0%, transparent 50%);
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: 
+                radial-gradient(circle at 30% 20%, rgba(114, 22, 244, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(143, 71, 246, 0.06) 0%, transparent 50%);
             pointer-events: none;
         }
 
         .hero-content {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 80px;
             align-items: center;
             position: relative;
             z-index: 2;
         }
 
         .hero-text h1 {
-            background: linear-gradient(135deg, var(--primary-purple) 0%, var(--secondary-purple) 100%);
+            background: var(--gradient-primary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: 24px;
-        }
-
-        .hero-text .lead {
             margin-bottom: 32px;
-            max-width: 480px;
+            line-height: 1.1;
         }
 
-        .hero-buttons {
-            display: flex;
-            gap: 16px;
+        .hero-text .lead { 
+            margin-bottom: 40px; 
+            max-width: 520px;
+            color: var(--gray-text);
+        }
+
+        .hero-buttons { 
+            display: flex; 
+            gap: 20px; 
             flex-wrap: wrap;
         }
 
-        .hero-image {
+        .hero-image { 
             position: relative;
         }
 
         .hero-image img {
             width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(114, 22, 244, 0.15);
-            border: 3px solid rgba(199, 125, 255, 0.2);
+            border-radius: 24px;
+            box-shadow: 
+                0 24px 48px rgba(114, 22, 244, 0.15),
+                0 0 0 1px rgba(199, 125, 255, 0.2);
+            transition: all 0.3s ease;
         }
 
-        /* Stats Section */
+        .hero-image img:hover {
+            transform: translateY(-4px);
+            box-shadow: 
+                0 32px 64px rgba(114, 22, 244, 0.2),
+                0 0 0 1px rgba(199, 125, 255, 0.3);
+        }
+
+        /* Stats Section - Enhanced */
         .stats {
             background: var(--white);
-            padding: 60px 0;
-            border-top: 1px solid rgba(199, 125, 255, 0.1);
-            border-bottom: 1px solid rgba(199, 125, 255, 0.1);
+            padding: 80px 0;
+            border-top: 1px solid rgba(199, 125, 255, 0.15);
+            border-bottom: 1px solid rgba(199, 125, 255, 0.15);
         }
 
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
+            gap: 60px;
             text-align: center;
+        }
+
+        .stat-item {
+            padding: 20px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-4px);
+            background: rgba(114, 22, 244, 0.02);
         }
 
         .stat-item h3 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: 800;
             color: var(--primary-purple);
-            margin-bottom: 8px;
+            margin-bottom: 12px;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .stat-item p {
-            color: var(--gray-text);
-            font-weight: 500;
+        .stat-item p { 
+            color: var(--gray-text); 
+            font-weight: 600; 
+            font-size: 1.1rem;
             margin: 0;
         }
 
-        /* Features Section */
+        /* Features Section - Redesigned */
         .features {
             background: var(--light-bg);
-            padding: 100px 0;
+            padding: 120px 0;
         }
 
-        .features-header {
-            text-align: center;
-            margin-bottom: 60px;
+        .features-header { 
+            text-align: center; 
+            margin-bottom: 80px;
         }
 
-        .features-header h2 {
-            color: var(--dark-text);
-            margin-bottom: 16px;
+        .features-header h2 { 
+            color: var(--dark-text); 
+            margin-bottom: 20px;
         }
 
-        .features-header .lead {
-            max-width: 600px;
+        .features-header .lead { 
+            max-width: 650px; 
             margin: 0 auto;
         }
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 40px;
         }
 
         .feature-card {
             background: linear-gradient(135deg, 
-                rgba(255, 255, 255, 0.95) 0%, 
-                rgba(248, 248, 248, 0.98) 50%,
-                rgba(255, 255, 255, 0.95) 100%);
-            backdrop-filter: blur(20px) saturate(130%);
-            -webkit-backdrop-filter: blur(20px) saturate(130%);
-            padding: 40px 32px;
-            border-radius: 20px;
+                rgba(255,255,255,0.95) 0%, 
+                rgba(248,248,248,0.98) 50%, 
+                rgba(255,255,255,0.95) 100%);
+            backdrop-filter: blur(25px) saturate(130%);
+            -webkit-backdrop-filter: blur(25px) saturate(130%);
+            padding: 48px 40px;
+            border-radius: 24px;
             border: 2px solid rgba(199, 125, 255, 0.2);
             box-shadow: 
-                0 8px 32px rgba(114, 22, 244, 0.12),
-                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+                0 12px 40px rgba(114,22,244,0.12),
+                inset 0 1px 0 rgba(255,255,255,0.8);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
         }
 
         .feature-card::before {
@@ -356,435 +377,575 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, var(--primary-purple) 0%, var(--secondary-purple) 50%, #9d4edd 100%);
-            border-radius: 20px 20px 0 0;
+            background: var(--gradient-primary);
+            border-radius: 24px 24px 0 0;
         }
 
-        .feature-card:hover {
-            transform: translateY(-8px) scale(1.02);
+        .feature-card:hover, .feature-card:focus {
+            transform: translateY(-12px) scale(1.02);
             box-shadow: 
-                0 16px 48px rgba(114, 22, 244, 0.2),
-                inset 0 1px 0 rgba(255, 255, 255, 0.9);
-            border-color: rgba(199, 125, 255, 0.4);
+                0 20px 60px rgba(114, 22, 244, 0.25),
+                inset 0 1px 0 rgba(255,255,255,0.9);
+            border-color: rgba(199,125,255,0.4);
+            text-decoration: none;
+            backdrop-filter: blur(30px) saturate(140%);
+            -webkit-backdrop-filter: blur(30px) saturate(140%);
         }
 
+        /* Modern Feature Icons */
         .feature-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--primary-purple) 0%, var(--secondary-purple) 100%);
-            border-radius: 16px;
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            background: var(--gradient-primary);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 24px;
-            font-size: 24px;
-            color: var(--white);
+            margin-bottom: 32px;
+            position: relative;
+            overflow: hidden;
         }
 
-        .feature-card h3 {
-            color: var(--dark-text);
-            margin-bottom: 16px;
+        .feature-icon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(180deg, rgba(255,255,255,0.2) 0%, transparent 100%);
         }
 
-        .feature-card p {
-            margin: 0;
+        /* Custom SVG Icons */
+        .icon-search {
+            width: 36px;
+            height: 36px;
+            fill: white;
+        }
+
+        .icon-people {
+            width: 36px;
+            height: 36px;
+            fill: white;
+        }
+
+        .icon-phone {
+            width: 36px;
+            height: 36px;
+            fill: white;
+        }
+
+        .feature-card h3 { 
+            color: var(--dark-text); 
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .feature-card p { 
+            margin: 0; 
             line-height: 1.6;
+            font-size: 1.1rem;
         }
 
-        /* About Preview Section */
-        .about-preview {
-            padding: 100px 0;
+        .feature-subtitle {
+            font-size: 0.9rem;
+            color: var(--primary-purple);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        /* About Section - Enhanced */
+        .about-preview { 
+            padding: 120px 0; 
             background: var(--white);
         }
 
         .about-content {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 80px;
             align-items: center;
         }
 
-        .about-text h2 {
-            margin-bottom: 24px;
+        .about-text h2 { 
+            margin-bottom: 32px;
         }
 
-        .about-text p {
-            margin-bottom: 24px;
+        .about-text p { 
+            margin-bottom: 28px;
         }
 
         .about-image img {
             width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 16px 32px rgba(114, 22, 244, 0.12);
-            border: 2px solid rgba(199, 125, 255, 0.2);
+            border-radius: 24px;
+            box-shadow: 
+                0 20px 40px rgba(114, 22, 244, 0.15),
+                0 0 0 1px rgba(199, 125, 255, 0.2);
+            transition: all 0.3s ease;
         }
 
-        /* Testimonial Section */
+        .about-image img:hover {
+            transform: translateY(-4px);
+            box-shadow: 
+                0 28px 56px rgba(114, 22, 244, 0.2),
+                0 0 0 1px rgba(199, 125, 255, 0.3);
+        }
+
+        /* Testimonials - Enhanced */
         .testimonials {
-            background: linear-gradient(135deg, var(--primary-purple) 0%, var(--secondary-purple) 100%);
-            padding: 80px 0;
+            background: var(--gradient-primary);
+            padding: 100px 0;
             color: var(--white);
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
 
-        .testimonial-card {
-            max-width: 800px;
+        .testimonials::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(180deg, rgba(255,255,255,0.1) 0%, transparent 100%);
+            pointer-events: none;
+        }
+
+        .testimonial-card { 
+            max-width: 900px; 
             margin: 0 auto;
+            position: relative;
+            z-index: 2;
         }
 
         .testimonial-quote {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-style: italic;
-            margin-bottom: 32px;
+            margin-bottom: 40px;
             line-height: 1.6;
+            font-weight: 500;
         }
 
-        .testimonial-author {
-            font-weight: 600;
-            font-size: 1.1rem;
+        .testimonial-author { 
+            font-weight: 700; 
+            font-size: 1.2rem;
         }
 
-        .testimonial-role {
-            opacity: 0.8;
+        .testimonial-role { 
+            opacity: 0.8; 
             margin-top: 8px;
+            font-size: 1rem;
         }
 
-        /* CTA Section */
-        .cta {
-            background: var(--light-bg);
-            padding: 100px 0;
+        /* CTA Section - Enhanced */
+        .cta { 
+            background: var(--light-bg); 
+            padding: 120px 0; 
             text-align: center;
         }
 
-        .cta-content {
-            max-width: 600px;
+        .cta-content { 
+            max-width: 700px; 
             margin: 0 auto;
         }
 
-        .cta h2 {
-            margin-bottom: 20px;
+        .cta h2 { 
+            margin-bottom: 24px;
         }
 
-        .cta .lead {
-            margin-bottom: 40px;
-        }
-
-        /* Footer */
-        .footer {
-            background: var(--dark-text);
-            color: var(--white);
-            padding: 60px 0 40px;
-            text-align: center;
-        }
-
-        .footer p {
-            color: rgba(255, 255, 255, 0.8);
-            margin: 0;
+        .cta .lead { 
+            margin-bottom: 48px;
         }
 
         /* Editable Content Styles */
         [contenteditable="true"] {
             transition: all 0.3s ease;
-            border-radius: 4px;
-            padding: 2px 4px;
-            margin: -2px -4px;
+            border-radius: 6px;
+            padding: 4px 6px;
+            margin: -4px -6px;
         }
 
         [contenteditable="true"]:hover {
-            background: rgba(114, 22, 244, 0.05);
-            outline: 1px dashed rgba(114, 22, 244, 0.3);
+            background: rgba(114, 22, 244, 0.06);
+            outline: 2px dashed rgba(114, 22, 244, 0.3);
         }
 
         [contenteditable="true"]:focus {
             background: rgba(114, 22, 244, 0.1);
-            outline: 2px solid rgba(114, 22, 244, 0.5);
-            box-shadow: 0 0 0 3px rgba(114, 22, 244, 0.1);
+            outline: 2px solid rgba(114, 22, 244, 0.6);
+            box-shadow: 0 0 0 4px rgba(114, 22, 244, 0.1);
         }
 
-        /* Edit Mode Indicator */
+        /* Image Editor */
+        .image-editor {
+            position: relative;
+            display: inline-block;
+        }
+
+        .edit-image-btn {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(114, 22, 244, 0.9);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 8px 12px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .image-editor:hover .edit-image-btn {
+            opacity: 1;
+        }
+
         .edit-indicator {
             position: fixed;
             top: 20px;
             left: 20px;
-            background: rgba(114, 22, 244, 0.9);
+            background: rgba(114, 22, 244, 0.95);
             color: var(--white);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.8rem;
+            padding: 10px 18px;
+            border-radius: 25px;
+            font-size: 0.85rem;
             font-weight: 600;
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             z-index: 9998;
             border: 1px solid rgba(199, 125, 255, 0.3);
             animation: pulse 2s infinite;
+            box-shadow: 0 4px 16px rgba(114, 22, 244, 0.3);
         }
 
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
+        @keyframes pulse { 
+            0%, 100% { opacity: 1; } 
+            50% { opacity: 0.7; } 
         }
 
-        /* Mobile Responsiveness */
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 16px;
+        /* Mobile Optimization */
+        @media (max-width: 1024px) {
+            .container { 
+                max-width: 95vw; 
+                padding: 0 20px;
             }
-
-            h1 {
-                font-size: 2.5rem;
-            }
-
-            h2 {
-                font-size: 2rem;
-            }
-
-            .hero {
-                padding: 100px 0 80px;
-            }
-
+            
             .hero-content {
                 grid-template-columns: 1fr;
-                gap: 40px;
-                text-align: center;
+                gap: 60px;
             }
-
-            .hero-buttons {
-                justify-content: center;
-            }
-
+            
             .about-content {
                 grid-template-columns: 1fr;
-                gap: 40px;
+                gap: 60px;
             }
+        }
 
-            .features-grid {
-                grid-template-columns: 1fr;
+        @media (max-width: 768px) {
+            .container { 
+                padding: 0 16px; 
             }
-
-            .stats-grid {
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-                gap: 30px;
+            
+            h1 { 
+                font-size: 2.8rem; 
             }
-
-            .btn {
-                padding: 14px 24px;
-                font-size: 0.9rem;
+            
+            h2 { 
+                font-size: 2.2rem; 
             }
-
-            .testimonial-quote {
+            
+            .lead {
                 font-size: 1.2rem;
             }
-
-            /* Mobile Save Button */
-            .save-btn {
-                bottom: 20px;
-                right: 20px;
-                padding: 14px 18px;
-                font-size: 0.8rem;
+            
+            p {
+                font-size: 1.1rem;
             }
-
-            .edit-indicator {
-                top: 10px;
-                left: 10px;
-                padding: 6px 12px;
-                font-size: 0.7rem;
+            
+            .hero { 
+                padding: 100px 0 80px; 
+            }
+            
+            .hero-content { 
+                text-align: center; 
+                gap: 50px;
+            }
+            
+            .hero-buttons { 
+                justify-content: center; 
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .features-grid { 
+                grid-template-columns: 1fr; 
+                gap: 30px;
+            }
+            
+            .stats-grid { 
+                grid-template-columns: repeat(2, 1fr); 
+                gap: 40px; 
+            }
+            
+            .btn { 
+                padding: 16px 28px; 
+                font-size: 0.95rem;
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .testimonial-quote { 
+                font-size: 1.4rem; 
+            }
+            
+            .save-btn { 
+                bottom: 20px; 
+                right: 20px; 
+                padding: 14px 18px; 
+                font-size: 0.8rem; 
+            }
+            
+            .edit-indicator { 
+                top: 10px; 
+                left: 10px; 
+                padding: 8px 14px; 
+                font-size: 0.75rem; 
+            }
+            
+            .feature-card {
+                padding: 36px 28px;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .section-lg {
+                padding: 80px 0;
             }
         }
 
         @media (max-width: 480px) {
-            h1 {
-                font-size: 2rem;
+            h1 { 
+                font-size: 2.2rem; 
             }
-
-            .section {
-                padding: 60px 0;
+            
+            h2 {
+                font-size: 1.8rem;
             }
-
-            .section-lg {
-                padding: 80px 0;
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
             }
-
-            .feature-card {
-                padding: 30px 24px;
+            
+            .feature-card { 
+                padding: 32px 24px; 
             }
-
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .btn {
+            
+            .hero-buttons { 
                 width: 100%;
-                max-width: 280px;
             }
-
-            /* Extra Mobile Optimization */
-            .save-btn {
-                bottom: 15px;
-                right: 15px;
-                padding: 12px 16px;
-                font-size: 0.75rem;
-                border-radius: 40px;
+            
+            .btn { 
+                width: 100%;
+                max-width: none;
             }
-
-            .save-btn span {
-                display: none; /* Hide text on very small screens */
+            
+            .save-btn { 
+                bottom: 15px; 
+                right: 15px; 
+                padding: 12px 16px; 
+                font-size: 0.75rem; 
+                border-radius: 40px; 
             }
-
-            .edit-indicator {
-                font-size: 0.65rem;
-                padding: 4px 8px;
+            
+            .save-btn span { 
+                display: none; 
             }
+            
+            .edit-indicator { 
+                font-size: 0.7rem; 
+                padding: 6px 10px; 
+            }
+            
+            [contenteditable="true"] { 
+                min-height: 44px; 
+                display: flex; 
+                align-items: center; 
+            }
+        }
 
-            /* Improve touch targets */
-            [contenteditable="true"] {
-                min-height: 44px;
-                display: flex;
-                align-items: center;
+        /* Print Styles */
+        @media print {
+            .save-btn,
+            .edit-indicator,
+            .edit-image-btn {
+                display: none !important;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Edit Mode Indicator -->
-    <div class="edit-indicator">
-        ✏️ Edit Mode Active
-    </div>
+    <div class="edit-indicator">✏️ Edit Mode Active</div>
 
     <!-- Hero Section -->
-    <section class="hero section-lg">
+    <section class="hero full-bg-section section-lg">
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1 contenteditable="true" style="">Real Treasury, <br>Real Results</h1>
-                    <p class="lead" contenteditable="true" style="">Helping companies select and connect to the right treasury technology – fast, unbiased, and vendor-smart.</p>
+                    <h1 contenteditable="true">Real Treasury,<br>Real Results</h1>
+                    <p class="lead" contenteditable="true">Helping companies select and connect to the right treasury technology – fast, unbiased, and vendor-smart.</p>
                     <div class="hero-buttons">
                         <a href="#openVideoModal" class="btn btn-primary">Explore Vendor Demos</a>
                         <a href="/about" class="btn btn-outline">Meet Our Team</a>
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=1000&amp;q=80" alt="Treasury Technology Dashboard">
+                    <div class="image-editor">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Treasury Technology Dashboard" data-editable-image="true">
+                        <button class="edit-image-btn" onclick="editImage(this)">✏️ Edit</button>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Stats Section -->
-    <section class="stats">
+    <section class="stats full-bg-section">
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-item">
-                    <h3 contenteditable="true" style="">50+</h3>
-                    <p contenteditable="true" style="">Vendors Mapped</p>
+                    <h3 contenteditable="true">50+</h3>
+                    <p contenteditable="true">Vendors Mapped</p>
                 </div>
                 <div class="stat-item">
                     <h3 contenteditable="true">10x</h3>
-                    <p contenteditable="true" style="">Faster RFP Process</p>
+                    <p contenteditable="true">Faster RFP Process</p>
                 </div>
                 <div class="stat-item">
                     <h3 contenteditable="true">100%</h3>
-                    <p contenteditable="true" style="">Independent &amp; Unbiased</p>
+                    <p contenteditable="true">Independent & Unbiased</p>
                 </div>
                 <div class="stat-item">
                     <h3 contenteditable="true">50+</h3>
-                    <p contenteditable="true" style="">Enterprise Clients</p>
+                    <p contenteditable="true">Enterprise Clients</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features">
+    <!-- Features Section - Redesigned -->
+    <section class="features full-bg-section">
         <div class="container">
             <div class="features-header">
                 <h2 contenteditable="true">What Makes Real Treasury Different?</h2>
-                <p class="lead" contenteditable="true" style="">We're treasury professionals who built the tools we wished existed for selection. No vendor bias, just better decisions.</p>
+                <p class="lead" contenteditable="true">We're treasury professionals who built the tools we wished existed for selection. No vendor bias, just better decisions.</p>
             </div>
             <div class="features-grid">
+                <!-- Treasury Tech Stack / Demo Library -->
+                <a href="#openVideoModal" class="feature-card" tabindex="0">
+                    <div class="feature-icon">
+                        <svg class="icon-search" viewBox="0 0 24 24">
+                            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                        </svg>
+                    </div>
+                    <div class="feature-subtitle" contenteditable="true">Demo Library</div>
+                    <h3 contenteditable="true">Treasury Tech Stack</h3>
+                    <p contenteditable="true">Browse our interactive vendor demo library with powerful filters and 5-minute demo videos. Find your best-fit treasury tech, instantly.</p>
+                </a>
+
+                <!-- Live Selection Workshop -->
                 <div class="feature-card">
-                    <div class="feature-icon">🌌</div>
-                    <h3 contenteditable="true" style="">Treasury Tech Stack</h3>
-                    <p contenteditable="true" style="">Interactive vendor library with filters and 5 min. demo videos to accelerate your shortlisting process. Find the right fit faster.</p>
+                    <div class="feature-icon">
+                        <svg class="icon-people" viewBox="0 0 24 24">
+                            <path d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zM4 18v-4h3v4h2v-7.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5V18h2v-6h1.5l1.19-3.11c.15-.4.49-.66.89-.76.4-.1.83 0 1.14.25L19 9v1h2V8.5c0-.28-.11-.53-.29-.71L18 5.5c-.39-.39-.9-.59-1.41-.59-.51 0-1.02.2-1.41.59L13 7.68V6c0-1.1-.9-2-2-2s-2 .9-2 2v2.68L6.82 5.5c-.39-.39-.9-.59-1.41-.59-.51 0-1.02.2-1.41.59L2.29 7.79C2.11 7.97 2 8.22 2 8.5V10h2V9l1.32-1.32c.31-.25.74-.35 1.14-.25.4.1.74.36.89.76L8.5 11H10v7h2v-2H4z"/>
+                        </svg>
+                    </div>
+                    <div class="feature-subtitle" contenteditable="true">Group Sessions</div>
+                    <h3 contenteditable="true">Live Selection Workshops</h3>
+                    <p contenteditable="true">Join a live, expert-led group workshop to align your team, cut through the vendor noise, and shortlist solutions—fast.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
-                    <h3 contenteditable="true" style="">Live Selection Workshop</h3>
-                    <p contenteditable="true" style="">Join one of our live workshops where we cut through the noise and help your team get aligned on the right tech — faster, and with less friction.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📋</div>
-                    <h3 contenteditable="true" style="">Proven Selection Method</h3>
-                    <p contenteditable="true" style="">Battle-tested templates that streamline due diligence, vendor scoring, and final decision-making.</p>
-                </div>
+
+                <!-- 15-Minute Strategy Call -->
+                <a href="/book-call" class="feature-card" tabindex="0">
+                    <div class="feature-icon">
+                        <svg class="icon-phone" viewBox="0 0 24 24">
+                            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                        </svg>
+                    </div>
+                    <div class="feature-subtitle" contenteditable="true">Free Consultation</div>
+                    <h3 contenteditable="true">15-Min Treasury Strategy Call</h3>
+                    <p contenteditable="true">Schedule a free call with our experts. Learn the ERR NOT method—used by top treasury teams to make confident, unbiased tech decisions—and get actionable advice for your project.</p>
+                </a>
             </div>
         </div>
     </section>
 
     <!-- About Preview Section -->
-    <section class="about-preview section">
+    <section class="about-preview section full-bg-section">
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
                     <h2 contenteditable="true">We're On Your Side of the Table</h2>
-                    <p contenteditable="true" style="">Founded by treasury professionals, Real Treasury is built to support internal finance teams with selecting the best tools for your company with unbiased guidance.</p>
-                    <p contenteditable="true" style="">We don't take money from vendors – our only client is you. This means unbiased recommendations and tools designed for your success, not vendor sales quotas.<br><br>We’ve sat on both sides of the table — as treasury practitioners and as advisors (and as the vendor). That means we understand the internal complexities, the vendor landscape, and how to cut through the noise to what actually works.</p>
+                    <p contenteditable="true">Founded by treasury professionals, Real Treasury is built to support internal finance teams with selecting the best tools for your company with confidence.</p>
+                    <p contenteditable="true">We don't take money from vendors – our only client is you. This means unbiased recommendations and tools designed for your success, not vendor margins.</p>
                     <a href="/about" class="btn btn-outline">Meet Our Team</a>
                 </div>
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=1000&amp;q=80" alt="Treasury Team Collaboration">
+                    <div class="image-editor">
+                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Treasury Team Collaboration" data-editable-image="true">
+                        <button class="edit-image-btn" onclick="editImage(this)">✏️ Edit</button>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Testimonial Section -->
-    <section class="testimonials">
+    <section class="testimonials full-bg-section">
         <div class="container">
             <div class="testimonial-card">
-                <div class="testimonial-quote" contenteditable="true" style=""><span style="font-style: normal;">
-                    “𝘈 𝘵𝘩𝘰𝘶𝘨𝘩𝘵𝘧𝘶𝘭, 𝘴𝘵𝘳𝘶𝘤𝘵𝘶𝘳𝘦𝘥 𝘱𝘳𝘰𝘤𝘦𝘴𝘴 𝘧𝘰𝘳 𝘴𝘦𝘭𝘦𝘤𝘵𝘪𝘯𝘨 𝘵𝘩𝘦 𝘤𝘰𝘳𝘯𝘦𝘳𝘴𝘵𝘰𝘯𝘦 𝘰𝘧 𝘮𝘺 𝘵𝘳𝘦𝘢𝘴𝘶𝘳𝘺 𝘵𝘦𝘤𝘩 𝘴𝘵𝘢𝘤𝘬 𝘰𝘧𝘧𝘦𝘳𝘦𝘥 𝘣𝘺 𝘛𝘳𝘢𝘤𝘦𝘺 𝘒𝘯𝘪𝘨𝘩𝘵 𝘢𝘯𝘥 𝘛𝘪𝘮 𝘚𝘤𝘩𝘶𝘭𝘵𝘻”
-                </span></div>
-                <div class="testimonial-author" contenteditable="true" style="">Tony 𝘝𝘶</div>
-                <div class="testimonial-role" contenteditable="true" style="">Treasurer, Broward Health</div>
+                <div class="testimonial-quote" contenteditable="true">
+                    "𝘈 𝘵𝘩𝘰𝘶𝘨𝘩𝘵𝘧𝘶𝘭, 𝘴𝘵𝘳𝘶𝘤𝘵𝘶𝘳𝘦𝘥 𝘱𝘳𝘰𝘤𝘦𝘴𝘴 𝘧𝘰𝘳 𝘴𝘦𝘭𝘦𝘤𝘵𝘪𝘯𝘨 𝘵𝘦𝘤𝘩𝘯𝘰𝘭𝘰𝘨𝘺..."
+                </div>
+                <div class="testimonial-author" contenteditable="true">Tony Vu</div>
+                <div class="testimonial-role" contenteditable="true">Treasurer, Broward Health</div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="cta">
+    <section class="cta full-bg-section">
         <div class="container">
             <div class="cta-content">
                 <h2 contenteditable="true">Ready to Transform Your Treasury Tech Search?</h2>
-                <p class="lead" contenteditable="true" style="">Access our FREE vendor demo library and start narrowing your shortlist in minutes, not months.</p>
+                <p class="lead" contenteditable="true">Access our FREE vendor demo library and start narrowing your shortlist in minutes, not months.</p>
                 <a href="#openVideoModal" class="btn btn-primary">Get Instant Access</a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>© 2025 Real Treasury. Independent treasury technology consulting.</p>
-        </div>
-    </footer>
-
     <!-- Save Button -->
-    <button class="save-btn" onclick="saveHTML()" style="background: rgba(114, 22, 244, 0.9);">
+    <button class="save-btn" onclick="saveHTML()">
         💾 <span>Save HTML</span>
     </button>
 
-    <!-- Video Modal Integration Script -->
     <script>
-        // Ensure modal functionality works with existing functions.php
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('Real Treasury Homepage loaded - Edit Mode Active');
+            console.log('Real Treasury Homepage loaded - Fresh Design Active');
             
-            // Add visual feedback for editable elements
+            // Enhanced editable element feedback
             const editableElements = document.querySelectorAll('[contenteditable="true"]');
             editableElements.forEach(element => {
                 element.addEventListener('focus', function() {
-                    this.style.boxShadow = '0 0 0 3px rgba(114, 22, 244, 0.2)';
+                    this.style.boxShadow = '0 0 0 4px rgba(114, 22, 244, 0.2)';
                 });
                 
                 element.addEventListener('blur', function() {
@@ -793,40 +954,51 @@
             });
         });
 
-        // Save HTML Function
+        // Enhanced Save Function
         function saveHTML() {
-            // Get the entire HTML content
             const htmlContent = document.documentElement.outerHTML;
-            
-            // Create a blob with the HTML content
             const blob = new Blob([htmlContent], { type: 'text/html' });
-            
-            // Create a temporary link element for download
             const link = document.createElement('a');
             link.href = URL.createObjectURL(blob);
-            link.download = 'real-treasury-homepage-edited.html';
-            
-            // Trigger the download
+            link.download = 'real-treasury-homepage-fresh.html';
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
-            
-            // Clean up the object URL
             URL.revokeObjectURL(link.href);
             
-            // Show feedback
+            // Enhanced feedback
             const saveBtn = document.querySelector('.save-btn');
             const originalHTML = saveBtn.innerHTML;
             saveBtn.innerHTML = '✅ <span>Saved!</span>';
-            saveBtn.style.background = 'rgba(76, 175, 80, 0.9)';
+            saveBtn.style.background = 'rgba(76, 175, 80, 0.95)';
             
             setTimeout(() => {
                 saveBtn.innerHTML = originalHTML;
-                saveBtn.style.background = 'rgba(114, 22, 244, 0.9)';
-            }, 2000);
+                saveBtn.style.background = 'rgba(114, 22, 244, 0.95)';
+            }, 2500);
         }
 
-        // Keyboard shortcut for save (Ctrl+S or Cmd+S)
+        // Image Editing Function
+        function editImage(button) {
+            const img = button.previousElementSibling;
+            const currentSrc = img.src;
+            
+            const newSrc = prompt('Enter new image URL:', currentSrc);
+            if (newSrc && newSrc !== currentSrc) {
+                img.src = newSrc;
+                
+                // Show feedback
+                button.innerHTML = '✅ Updated';
+                button.style.background = 'rgba(76, 175, 80, 0.9)';
+                
+                setTimeout(() => {
+                    button.innerHTML = '✏️ Edit';
+                    button.style.background = 'rgba(114, 22, 244, 0.9)';
+                }, 2000);
+            }
+        }
+
+        // Enhanced keyboard shortcuts
         document.addEventListener('keydown', function(e) {
             if ((e.ctrlKey || e.metaKey) && e.key === 's') {
                 e.preventDefault();
@@ -834,18 +1006,27 @@
             }
         });
 
-        // Auto-save functionality (optional)
+        // Auto-save functionality
         let autoSaveTimer;
         document.addEventListener('input', function(e) {
             if (e.target.contentEditable === 'true') {
                 clearTimeout(autoSaveTimer);
                 autoSaveTimer = setTimeout(() => {
-                    console.log('Auto-save triggered (you can enable this if needed)');
-                    // Uncomment the line below to enable auto-save
-                    // saveHTML();
-                }, 10000); // Auto-save after 10 seconds of inactivity
+                    console.log('Auto-save triggered (enable by uncommenting saveHTML() below)');
+                    // saveHTML(); // Uncomment to enable auto-save
+                }, 15000); // Auto-save after 15 seconds of inactivity
             }
         });
-    </script>
 
-</body></html>
+        // Enhanced accessibility
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    this.click();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
