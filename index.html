@@ -1219,7 +1219,63 @@
         let editModeEnabled = true;
 
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('Real Treasury Homepage loaded - Modal Links Fixed');
+            console.log('Real Treasury Homepage loaded - Testing Modal Links');
+            
+            // DEBUGGING: Test modal button detection
+            console.log('=== MODAL BUTTON DEBUG ===');
+            const modalButtons = document.querySelectorAll('a[href="#openVideoModal"]');
+            console.log('Found modal buttons:', modalButtons.length);
+            console.log('Modal buttons found:', modalButtons);
+            
+            // Test each modal button
+            modalButtons.forEach((button, index) => {
+                console.log(`Button ${index + 1}:`, button.textContent.trim(), button);
+                
+                button.addEventListener('click', function(e) {
+                    console.log('=== MODAL BUTTON CLICKED ===');
+                    console.log('Button text:', this.textContent.trim());
+                    console.log('Button href:', this.href);
+                    console.log('Button element:', this);
+                    console.log('Event:', e);
+                    
+                    // Check if we're in an iframe
+                    if (window !== window.parent) {
+                        console.log('We are inside an iframe - this might be the issue!');
+                        console.log('Parent window:', window.parent);
+                        
+                        // Try to trigger modal on parent window
+                        try {
+                            if (window.parent.document) {
+                                console.log('Trying to access parent window...');
+                                // Look for modal in parent window
+                                const parentModalTrigger = window.parent.document.querySelector('a[href="#openVideoModal"]');
+                                if (parentModalTrigger) {
+                                    console.log('Found modal trigger in parent, clicking it...');
+                                    e.preventDefault();
+                                    parentModalTrigger.click();
+                                    return;
+                                }
+                            }
+                        } catch (err) {
+                            console.log('Cannot access parent window (cross-origin):', err);
+                        }
+                        
+                        // Alternative: try to post message to parent
+                        try {
+                            window.parent.postMessage({ 
+                                action: 'openVideoModal',
+                                source: 'treasury-homepage'
+                            }, '*');
+                            console.log('Posted message to parent window');
+                            e.preventDefault();
+                        } catch (err) {
+                            console.log('Could not post message to parent:', err);
+                        }
+                    } else {
+                        console.log('We are in the main window');
+                    }
+                });
+            });
             
             // Enhanced editable element feedback
             const editableElements = document.querySelectorAll('[contenteditable="true"]');
