@@ -135,6 +135,32 @@
             -webkit-backdrop-filter: blur(25px);
         }
 
+        /* Modal Button Styles from CSS */
+        .open-video-modal {
+            background: linear-gradient(135deg, #7216f4 0%, #8f47f6 100%) !important;
+            color: white !important;
+            padding: 15px 30px !important;
+            border: none !important;
+            border-radius: 8px !important;
+            font-size: 1.1rem !important;
+            font-weight: 600 !important;
+            cursor: pointer !important;
+            transition: all 0.3s ease !important;
+            box-shadow: 0 4px 12px rgba(114, 22, 244, 0.3) !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.5px !important;
+            text-decoration: none !important;
+            display: inline-block !important;
+        }
+
+        .open-video-modal:hover {
+            background: linear-gradient(135deg, #8f47f6 0%, #9d4edd 100%) !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 6px 16px rgba(114, 22, 244, 0.4) !important;
+            color: white !important;
+            text-decoration: none !important;
+        }
+
         /* Save Button */
         .save-btn {
             position: fixed;
@@ -544,17 +570,6 @@
             box-shadow: 
                 0 12px 40px rgba(114, 22, 244, 0.15),
                 inset 0 1px 0 rgba(255, 255, 255, 0.8);
-        }
-
-        .testimonial-card::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-purple) 0%, var(--secondary-purple) 50%, var(--light-purple) 100%);
-            border-radius: 24px 24px 0 0;
         }
 
         .testimonial-quote {
@@ -1065,7 +1080,7 @@
                     <h1 contenteditable="true">Real Treasury,<br>Real Results</h1>
                     <p class="lead" contenteditable="true">Helping companies select and connect to the right treasury technology – fast, unbiased, and vendor-smart.</p>
                     <div class="hero-buttons">
-                        <a href="#openVideoModal" class="btn btn-primary">Explore Vendor Demos</a>
+                        <a href="#openVideoModal" class="btn btn-primary open-video-modal">Explore Vendor Demos</a>
                         <a href="/about" class="btn btn-outline">Meet Our Team</a>
                     </div>
                 </div>
@@ -1112,7 +1127,7 @@
             </div>
             <div class="features-grid">
                 <!-- Treasury Tech Stack / Demo Library -->
-                <a href="#openVideoModal" class="feature-card" tabindex="0">
+                <a href="#openVideoModal" class="feature-card open-video-modal" tabindex="0">
                     <div class="feature-icon">
                         <svg class="icon-search" viewBox="0 0 24 24">
                             <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
@@ -1189,7 +1204,7 @@
             <div class="cta-content">
                 <h2 contenteditable="true">Ready to Transform Your Treasury Tech Search?</h2>
                 <p class="lead" contenteditable="true">Access our FREE vendor demo library and start narrowing your shortlist in minutes, not months.</p>
-                <a href="#openVideoModal" class="btn btn-primary">Get Instant Access</a>
+                <a href="#openVideoModal" class="btn btn-primary open-video-modal">Get Instant Access</a>
             </div>
         </div>
     </section>
@@ -1204,7 +1219,7 @@
         let editModeEnabled = true;
 
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('Real Treasury Homepage loaded - Fresh Design Active');
+            console.log('Real Treasury Homepage loaded - Modal Links Fixed');
             
             // Enhanced editable element feedback
             const editableElements = document.querySelectorAll('[contenteditable="true"]');
@@ -1252,7 +1267,7 @@
             const blob = new Blob([htmlContent], { type: 'text/html' });
             const link = document.createElement('a');
             link.href = URL.createObjectURL(blob);
-            link.download = 'real-treasury-homepage-fresh.html';
+            link.download = 'real-treasury-homepage-fixed.html';
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
