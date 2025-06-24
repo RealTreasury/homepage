@@ -139,68 +139,6 @@
             -webkit-backdrop-filter: blur(25px);
         }
 
-        /* Modal Button Styles from CSS */
-        .open-video-modal {
-            background: linear-gradient(135deg, #7216f4 0%, #8f47f6 100%) !important;
-            color: white !important;
-            padding: 15px 30px !important;
-            border: none !important;
-            border-radius: 8px !important;
-            font-size: 1.1rem !important;
-            font-weight: 600 !important;
-            cursor: pointer !important;
-            transition: all 0.3s ease !important;
-            box-shadow: 0 4px 12px rgba(114, 22, 244, 0.3) !important;
-            text-transform: uppercase !important;
-            letter-spacing: 0.5px !important;
-            text-decoration: none !important;
-            display: inline-block !important;
-        }
-
-        .open-video-modal:hover {
-            background: linear-gradient(135deg, #8f47f6 0%, #9d4edd 100%) !important;
-            transform: translateY(-2px) !important;
-            box-shadow: 0 6px 16px rgba(114, 22, 244, 0.4) !important;
-            color: white !important;
-            text-decoration: none !important;
-        }
-
-        /* Save Button */
-        .save-btn {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 9999;
-            padding: 16px 20px;
-            background: rgba(114, 22, 244, 0.95);
-            color: var(--white);
-            border: 1px solid rgba(199, 125, 255, 0.4);
-            border-radius: 50px;
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
-            box-shadow: 
-                0 8px 32px rgba(114, 22, 244, 0.3),
-                inset 0 1px 0 rgba(255, 255, 255, 0.2);
-            font-weight: 600;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            text-transform: none;
-            letter-spacing: normal;
-        }
-
-        .save-btn:hover { 
-            transform: translateY(-2px) scale(1.05); 
-            background: rgba(143, 71, 246, 0.95); 
-            box-shadow: 0 12px 40px rgba(114, 22, 244, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3);
-        }
-
-        .save-btn:active { 
-            transform: translateY(0) scale(1);
-        }
 
         /* Typography */
         h1, h2, h3 { 
@@ -393,7 +331,6 @@
             background-clip: text;
         }
 
-        .stat-item h3[contenteditable="true"] {
             display: block;
         }
 
@@ -788,85 +725,15 @@
             margin-bottom: 48px;
         }
 
-        /* Editable Content Styles */
-        [contenteditable="true"] {
-            transition: all 0.3s ease;
-            border-radius: 6px;
-            padding: 4px 6px;
-            margin: -4px -6px;
-        }
-
-        [contenteditable="true"]:hover {
             background: rgba(114, 22, 244, 0.06);
             outline: 2px dashed rgba(114, 22, 244, 0.3);
         }
 
-        [contenteditable="true"]:focus {
             background: rgba(114, 22, 244, 0.1);
             outline: 2px solid rgba(114, 22, 244, 0.6);
             box-shadow: 0 0 0 4px rgba(114, 22, 244, 0.1);
         }
 
-        /* Image Editor */
-        .image-editor {
-            position: relative;
-            display: inline-block;
-        }
-
-        .edit-image-btn {
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            background: rgba(114, 22, 244, 0.9);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            padding: 8px 12px;
-            font-size: 0.8rem;
-            cursor: pointer;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            opacity: 0;
-            transition: all 0.3s ease;
-        }
-
-        .image-editor:hover .edit-image-btn {
-            opacity: 1;
-        }
-
-        .edit-indicator {
-            position: fixed;
-            bottom: 90px;
-            left: 30px;
-            background: rgba(114, 22, 244, 0.95);
-            color: var(--white);
-            padding: 10px 18px;
-            border-radius: 25px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            z-index: 9998;
-            border: 1px solid rgba(199, 125, 255, 0.3);
-            box-shadow: 0 4px 16px rgba(114, 22, 244, 0.3);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            user-select: none;
-        }
-
-        .edit-indicator:hover {
-            background: rgba(143, 71, 246, 0.95);
-            transform: translateY(-2px) scale(1.05);
-        }
-
-        .edit-indicator.edit-off {
-            background: rgba(108, 117, 125, 0.9);
-            border-color: rgba(108, 117, 125, 0.3);
-        }
-
-        .edit-indicator.edit-off:hover {
-            background: rgba(134, 142, 150, 0.95);
-        }
 
         /* Enhanced Creative Animations */
         @keyframes float {
@@ -1111,14 +978,12 @@
                 font-size: 1.4rem; 
             }
             
-            .save-btn { 
                 bottom: 20px; 
                 right: 20px; 
                 padding: 14px 18px; 
                 font-size: 0.8rem; 
             }
             
-            .edit-indicator { 
                 bottom: 85px; 
                 left: 20px; 
                 padding: 8px 14px; 
@@ -1194,7 +1059,6 @@
                 max-width: none;
             }
             
-            .save-btn { 
                 bottom: 15px; 
                 right: 15px; 
                 padding: 12px 16px; 
@@ -1202,18 +1066,15 @@
                 border-radius: 40px; 
             }
             
-            .save-btn span { 
                 display: none; 
             }
             
-            .edit-indicator { 
                 font-size: 0.7rem; 
                 padding: 6px 10px;
                 bottom: 80px;
                 left: 15px;
             }
             
-            [contenteditable="true"] { 
                 min-height: 44px; 
                 display: flex; 
                 align-items: center; 
@@ -1222,24 +1083,20 @@
 
         /* Print Styles */
         @media print {
-            .save-btn,
-            .edit-indicator,
-            .edit-image-btn {
                 display: none !important;
             }
         }
     </style>
 </head>
 <body>
-    <button class="edit-indicator" onclick="toggleEditMode()" id="editToggle">✏️ Edit Mode ON</button>
 
     <!-- Hero Section -->
     <section class="hero full-bg-section section-lg">
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1 contenteditable="true">Real Treasury,<br>Real Results</h1>
-                    <p class="lead" contenteditable="true">Helping companies select and connect to the right treasury technology – fast, unbiased, and vendor-smart.</p>
+                    <h1>Real Treasury,<br>Real Results</h1>
+                    <p class="lead">Helping companies select and connect to the right treasury technology – fast, unbiased, and vendor-smart.</p>
                     <div class="hero-buttons">
                         <a href="#openVideoModal" class="btn btn-primary">Explore Vendor Demos</a>
                         <a href="#meet-the-team" class="btn btn-outline">Meet Our Team</a>
@@ -1247,12 +1104,11 @@
                 </div>
                 <div class="hero-image">
                     <div class="chart-title-overlay">
-                        <h3 contenteditable="true">The Treasury Tech Marketplace</h3>
-                        <p contenteditable="true">North American Vendors</p>
+                        <h3>The Treasury Tech Marketplace</h3>
+                        <p>North American Vendors</p>
                     </div>
                     <div class="image-editor">
-                        <img src="https://aisbee08e5bdvaliantmaker.wpcomstaging.com/wp-content/uploads/2025/06/TMS-Marketplace-US-03-2025-no-logo-no-title.png" alt="Treasury Technology Dashboard" data-editable-image="true">
-                        <button class="edit-image-btn" onclick="editImage(this)">✏️ Edit</button>
+                        <img src="https://aisbee08e5bdvaliantmaker.wpcomstaging.com/wp-content/uploads/2025/06/TMS-Marketplace-US-03-2025-no-logo-no-title.png" alt="Treasury Technology Dashboard">
                     </div>
                 </div>
             </div>
@@ -1264,20 +1120,20 @@
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-item">
-                    <h3 contenteditable="true">4-6 Weeks</h3>
-                    <p contenteditable="true">Average Selection Time</p>
+                    <h3>4-6 Weeks</h3>
+                    <p>Average Selection Time</p>
                 </div>
                 <div class="stat-item">
-                    <h3 contenteditable="true">10x</h3>
-                    <p contenteditable="true">Faster RFP Process</p>
+                    <h3>10x</h3>
+                    <p>Faster RFP Process</p>
                 </div>
                 <div class="stat-item">
-                    <h3 contenteditable="true">100%</h3>
-                    <p contenteditable="true">Independent & Unbiased</p>
+                    <h3>100%</h3>
+                    <p>Independent & Unbiased</p>
                 </div>
                 <div class="stat-item">
-                    <h3 contenteditable="true">50+</h3>
-                    <p contenteditable="true">Enterprise Clients</p>
+                    <h3>50+</h3>
+                    <p>Enterprise Clients</p>
                 </div>
             </div>
         </div>
@@ -1287,8 +1143,8 @@
     <section class="features full-bg-section">
         <div class="container">
             <div class="features-header">
-                <h2 contenteditable="true">What Makes Real Treasury Different?</h2>
-                <p class="lead" contenteditable="true">We're treasury professionals who built the tools we wished existed for selection. No vendor bias, just better decisions.</p>
+                <h2>What Makes Real Treasury Different?</h2>
+                <p class="lead">We're treasury professionals who built the tools we wished existed for selection. No vendor bias, just better decisions.</p>
             </div>
             <div class="features-grid">
                 <!-- Treasury Tech Stack / Demo Library -->
@@ -1298,9 +1154,9 @@
                             <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
                         </svg>
                     </div>
-                    <div class="feature-subtitle" contenteditable="true">Demo Library</div>
-                    <h3 contenteditable="true">Treasury Tech Stack</h3>
-                    <p contenteditable="true">Browse our interactive vendor demo library with powerful filters and 5-minute demo videos. Find your best-fit treasury tech, instantly.</p>
+                    <div class="feature-subtitle">Demo Library</div>
+                    <h3>Treasury Tech Stack</h3>
+                    <p>Browse our interactive vendor demo library with powerful filters and 5-minute demo videos. Find your best-fit treasury tech, instantly.</p>
                 </a>
 
                 <!-- Live Selection Workshop -->
@@ -1310,9 +1166,9 @@
                             <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
                         </svg>
                     </div>
-                    <div class="feature-subtitle" contenteditable="true">Group Sessions</div>
-                    <h3 contenteditable="true">Live Selection Workshops</h3>
-                    <p contenteditable="true">Join a live, expert-led group workshop to align your team, cut through the vendor noise, and shortlist solutions—fast.</p>
+                    <div class="feature-subtitle">Group Sessions</div>
+                    <h3>Live Selection Workshops</h3>
+                    <p>Join a live, expert-led group workshop to align your team, cut through the vendor noise, and shortlist solutions—fast.</p>
                 </div>
 
                 <!-- 15-Minute Strategy Call -->
@@ -1322,9 +1178,9 @@
                             <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
                         </svg>
                     </div>
-                    <div class="feature-subtitle" contenteditable="true">Free Consultation</div>
-                    <h3 contenteditable="true">15-Min Treasury Strategy Call</h3>
-                    <p contenteditable="true">Schedule a free call with our experts. Learn the ERR NOT method—used by top treasury teams to make confident, unbiased tech decisions—and get actionable advice for your project.</p>
+                    <div class="feature-subtitle">Free Consultation</div>
+                    <h3>15-Min Treasury Strategy Call</h3>
+                    <p>Schedule a free call with our experts. Learn the ERR NOT method—used by top treasury teams to make confident, unbiased tech decisions—and get actionable advice for your project.</p>
                 </a>
             </div>
         </div>
@@ -1334,21 +1190,20 @@
     <section class="team full-bg-section" id="meet-the-team">
         <div class="container">
              <div class="features-header">
-                <h2 contenteditable="true">Meet the Founders</h2>
-                <p class="lead" contenteditable="true">We're on your side of the table. Founded by treasury professionals, Real Treasury is built to support internal finance teams with selecting the best tools for your company with confidence.</p>
+                <h2>Meet the Founders</h2>
+                <p class="lead">We're on your side of the table. Founded by treasury professionals, Real Treasury is built to support internal finance teams with selecting the best tools for your company with confidence.</p>
             </div>
             <div class="team-grid">
                 <!-- Tim's Bio -->
                 <div class="team-card">
                     <div class="team-image">
                         <div class="image-editor">
-                            <img src="https://aisbee08e5bdvaliantmaker.wpcomstaging.com/wp-content/uploads/2025/06/Tim-Schultz-website-headshot_046.jpg" alt="Tim - Co-Founder" data-editable-image="true">
-                            <button class="edit-image-btn" onclick="editImage(this)">✏️ Edit</button>
+                            <img src="https://aisbee08e5bdvaliantmaker.wpcomstaging.com/wp-content/uploads/2025/06/Tim-Schultz-website-headshot_046.jpg" alt="Tim - Co-Founder">
                         </div>
                     </div>
-                    <div class="team-role" contenteditable="true">Co-Founder & PRINCIPAL Consultant</div>
-                    <h3 class="team-name" contenteditable="true">Tim</h3>
-                    <p class="team-bio" contenteditable="true">Former treasury lead with 15+ years optimizing cash management and risk operations. Tim founded Real Treasury to democratize access to treasury technology insights and help teams make confident, informed decisions without vendor bias.</p>
+                    <div class="team-role">Co-Founder & PRINCIPAL Consultant</div>
+                    <h3 class="team-name">Tim</h3>
+                    <p class="team-bio">Former treasury lead with 15+ years optimizing cash management and risk operations. Tim founded Real Treasury to democratize access to treasury technology insights and help teams make confident, informed decisions without vendor bias.</p>
                     
                     <div class="team-contact">
                         <div class="contact-row">
@@ -1380,13 +1235,12 @@
                 <div class="team-card">
                     <div class="team-image">
                         <div class="image-editor">
-                            <img src="https://aisbee08e5bdvaliantmaker.wpcomstaging.com/wp-content/uploads/2025/06/Tracey-Headshot-Website.png" alt="Tracey - Co-Founder" data-editable-image="true">
-                            <button class="edit-image-btn" onclick="editImage(this)">✏️ Edit</button>
+                            <img src="https://aisbee08e5bdvaliantmaker.wpcomstaging.com/wp-content/uploads/2025/06/Tracey-Headshot-Website.png" alt="Tracey - Co-Founder">
                         </div>
                     </div>
-                    <div class="team-role" contenteditable="true">Co-Founder & PRINCIPAL CONSULTANT</div>
-                    <h3 class="team-name" contenteditable="true">Tracey</h3>
-                    <p class="team-bio" contenteditable="true">Treasury operations expert specializing in system implementations and process optimization. Tracey leads client engagements and workshop facilitation, ensuring every treasury team gets the strategic support they need during technology transitions.</p>
+                    <div class="team-role">Co-Founder & PRINCIPAL CONSULTANT</div>
+                    <h3 class="team-name">Tracey</h3>
+                    <p class="team-bio">Treasury operations expert specializing in system implementations and process optimization. Tracey leads client engagements and workshop facilitation, ensuring every treasury team gets the strategic support they need during technology transitions.</p>
                     
                     <div class="team-contact">
                         <div class="contact-row">
@@ -1421,11 +1275,11 @@
     <section class="testimonials full-bg-section">
         <div class="container">
             <div class="testimonial-card">
-                <div class="testimonial-quote" contenteditable="true">
+                <div class="testimonial-quote">
                     "𝘈 𝘵𝘩𝘰𝘶𝘨𝘩𝘵𝘧𝘶𝘭, 𝘴𝘵𝘳𝘶𝘤𝘵𝘶𝘳𝘦𝘥 𝘱𝘳𝘰𝘤𝘦𝘴𝘴 𝘧𝘰𝘳 𝘴𝘦𝘭𝘦𝘤𝘵𝘪𝘯𝘨 𝘵𝘦𝘤𝘩𝘯𝘰𝘭𝘰𝘨𝘺..."
                 </div>
-                <div class="testimonial-author" contenteditable="true">Tony Vu</div>
-                <div class="testimonial-role" contenteditable="true">Treasurer, Broward Health</div>
+                <div class="testimonial-author">Tony Vu</div>
+                <div class="testimonial-role">Treasurer, Broward Health</div>
             </div>
         </div>
     </section>
@@ -1434,157 +1288,31 @@
     <section class="cta full-bg-section">
         <div class="container">
             <div class="cta-content">
-                <h2 contenteditable="true">Ready to Transform Your Treasury Tech Search?</h2>
-                <p class="lead" contenteditable="true">Access our FREE vendor demo library and start narrowing your shortlist in minutes, not months.</p>
+                <h2>Ready to Transform Your Treasury Tech Search?</h2>
+                <p class="lead">Access our FREE vendor demo library and start narrowing your shortlist in minutes, not months.</p>
                 <a href="#openVideoModal" class="btn btn-primary">Get Instant Access</a>
             </div>
         </div>
     </section>
-
-    <!-- Save Button -->
-    <button class="save-btn" onclick="saveHTML()">
-        💾 <span>Save HTML</span>
-    </button>
-
-    <script>
-        // Global edit mode state
-        let editModeEnabled = true;
-
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('Real Treasury Homepage loaded - Testing Modal Links');
-            
-            // DEBUGGING: Test modal button detection
-            console.log('=== MODAL BUTTON DEBUG ===');
-            const modalButtons = document.querySelectorAll('a[href="#openVideoModal"]');
-            console.log('Found modal buttons:', modalButtons.length);
-            
-            modalButtons.forEach((button, index) => {
-                button.addEventListener('click', function(e) {
-                    console.log('=== MODAL BUTTON CLICKED ===');
-                    if (window !== window.parent) {
-                        try {
-                            window.parent.postMessage({ 
-                                action: 'openVideoModal',
-                                source: 'treasury-homepage'
-                            }, '*');
-                            e.preventDefault();
-                        } catch (err) {
-                            console.log('Could not post message to parent:', err);
-                        }
-                    }
-                });
-            });
-            
-            // Enhanced editable element feedback
-            const editableElements = document.querySelectorAll('[contenteditable="true"]');
-            editableElements.forEach(element => {
-                element.addEventListener('focus', function() {
-                    if (editModeEnabled) {
-                        this.style.boxShadow = '0 0 0 4px rgba(114, 22, 244, 0.2)';
-                    }
-                });
-                
-                element.addEventListener('blur', function() {
-                    this.style.boxShadow = '';
-                });
-            });
-        });
-
-        // Toggle Edit Mode Function
-        function toggleEditMode() {
-            const editButton = document.getElementById('editToggle');
-            const editableElements = document.querySelectorAll('[contenteditable="true"]');
-            
-            editModeEnabled = !editModeEnabled;
-            
-            if (editModeEnabled) {
-                editableElements.forEach(el => el.setAttribute('contenteditable', 'true'));
-                editButton.innerHTML = '✏️ Edit Mode ON';
-                editButton.classList.remove('edit-off');
-            } else {
-                editableElements.forEach(el => {
-                    el.setAttribute('contenteditable', 'false');
-                    el.style.boxShadow = '';
-                });
-                editButton.innerHTML = '👁️ Edit Mode OFF';
-                editButton.classList.add('edit-off');
-            }
-        }
-
-        // Enhanced Save Function
-        function saveHTML() {
-            const htmlContent = document.documentElement.outerHTML;
-            const blob = new Blob([htmlContent], { type: 'text/html' });
-            const link = document.createElement('a');
-            link.href = URL.createObjectURL(blob);
-            link.download = 'real-treasury-homepage-updated.html';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            URL.revokeObjectURL(link.href);
-            
-            const saveBtn = document.querySelector('.save-btn');
-            const originalHTML = saveBtn.innerHTML;
-            saveBtn.innerHTML = '✅ <span>Saved!</span>';
-            saveBtn.style.background = 'rgba(76, 175, 80, 0.95)';
-            
-            setTimeout(() => {
-                saveBtn.innerHTML = originalHTML;
-                saveBtn.style.background = 'rgba(114, 22, 244, 0.95)';
-            }, 2500);
-        }
-
-        // Image Editing Function
-        function editImage(button) {
-            if (!editModeEnabled) {
-                alert('Please enable Edit Mode to change images');
-                return;
-            }
-            
-            const img = button.previousElementSibling;
-            const currentSrc = img.src;
-            
-            const newSrc = prompt('Enter new image URL:', currentSrc);
-            if (newSrc && newSrc !== currentSrc) {
-                img.src = newSrc;
-                button.innerHTML = '✅ Updated';
-                button.style.background = 'rgba(76, 175, 80, 0.9)';
-                setTimeout(() => {
-                    button.innerHTML = '✏️ Edit';
-                    button.style.background = 'rgba(114, 22, 244, 0.9)';
-                }, 2000);
-            }
-        }
-
-        // Enhanced keyboard shortcuts
-        document.addEventListener('keydown', function(e) {
-            if ((e.ctrlKey || e.metaKey) && e.key === 's') {
-                e.preventDefault();
-                saveHTML();
-            }
-            if ((e.ctrlKey || e.metaKey) && e.key === 'e') {
-                e.preventDefault();
-                toggleEditMode();
-            }
-        });
-
-        // Enhanced accessibility
-        document.querySelectorAll('.feature-card').forEach(card => {
-            card.addEventListener('keydown', function(e) {
-                if (e.key === 'Enter' || e.key === ' ') {
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const modalButtons = document.querySelectorAll("a[href="#openVideoModal"]");
+    modalButtons.forEach(button => {
+        button.addEventListener("click", function(e) {
+            if (window !== window.parent) {
+                try {
+                    window.parent.postMessage({
+                        action: "openVideoModal",
+                        source: "treasury-homepage"
+                    }, "*");
                     e.preventDefault();
-                    this.click();
+                } catch (err) {
+                    console.log("Could not post message to parent:", err);
                 }
-            });
-        });
-
-        // Prevent editing when edit mode is off
-        document.addEventListener('click', function(e) {
-            if (e.target.hasAttribute('contenteditable') && !editModeEnabled) {
-                e.preventDefault();
-                return false;
             }
         });
-    </script>
+    });
+});
+</script>
 </body>
 </html>
