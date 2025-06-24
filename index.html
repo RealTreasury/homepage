@@ -29,6 +29,10 @@
             --gradient-light: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         * { 
             margin: 0; 
             padding: 0; 
@@ -449,24 +453,12 @@
         }
 
         /* Custom SVG Icons */
-        .icon-search {
+        .icon-search, .icon-workshop, .icon-phone {
             width: 36px;
             height: 36px;
             fill: white;
         }
-
-        .icon-people {
-            width: 36px;
-            height: 36px;
-            fill: white;
-        }
-
-        .icon-phone {
-            width: 36px;
-            height: 36px;
-            fill: white;
-        }
-
+        
         .feature-card h3 { 
             color: var(--dark-text); 
             margin-bottom: 20px;
@@ -488,42 +480,178 @@
             margin-bottom: 8px;
         }
 
-        /* About Section - Enhanced */
-        .about-preview { 
-            padding: 80px 0; 
+        /* Team Section Styles (from team page) */
+        .team {
             background: var(--white);
+            padding: 80px 0;
         }
 
-        .about-content {
+        .team-grid {
             display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 80px;
-            align-items: center;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 60px;
+            margin-top: 60px; /* Add space from header */
         }
 
-        .about-text h2 { 
+        .team-card {
+            background: linear-gradient(135deg, 
+                rgba(255,255,255,0.95) 0%, 
+                rgba(248,248,248,0.98) 50%, 
+                rgba(255,255,255,0.95) 100%);
+            backdrop-filter: blur(25px) saturate(130%);
+            -webkit-backdrop-filter: blur(25px) saturate(130%);
+            padding: 48px 40px;
+            border-radius: 24px;
+            border: 2px solid rgba(199, 125, 255, 0.2);
+            box-shadow: 
+                0 12px 40px rgba(114,22,244,0.12),
+                inset 0 1px 0 rgba(255,255,255,0.8);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .team-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+            border-radius: 24px 24px 0 0;
+        }
+
+        .team-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 
+                0 20px 60px rgba(114, 22, 244, 0.25),
+                inset 0 1px 0 rgba(255,255,255,0.9);
+            border-color: rgba(199,125,255,0.4);
+            backdrop-filter: blur(30px) saturate(140%);
+            -webkit-backdrop-filter: blur(30px) saturate(140%);
+        }
+
+        .team-image {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 32px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid rgba(199, 125, 255, 0.2);
+            box-shadow: 0 8px 24px rgba(114, 22, 244, 0.15);
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .team-image:hover {
+            border-color: rgba(199, 125, 255, 0.4);
+            box-shadow: 0 12px 32px rgba(114, 22, 244, 0.25);
+            transform: scale(1.05);
+        }
+
+        .team-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+            display: block;
+            border-radius: 50%;
+            background-color: #f8f8f8;
+        }
+        
+        /* Specific fix for Tracey's PNG image */
+        .team-image img[src*="Tracey-Headshot-Website.png"] {
+            object-fit: cover;
+            object-position: center 20%;
+            transform: scale(1.2);
+            filter: contrast(1.05);
+        }
+
+        .team-role {
+            font-size: 1rem;
+            color: var(--primary-purple);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+
+        .team-name {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--dark-text);
+            margin-bottom: 24px;
+        }
+
+        .team-bio {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: var(--gray-text);
             margin-bottom: 32px;
         }
 
-        .about-text p { 
-            margin-bottom: 28px;
+        .team-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+            margin-top: 24px;
         }
 
-        .about-image img {
-            width: 100%;
-            border-radius: 24px;
-            box-shadow: 
-                0 20px 40px rgba(114, 22, 244, 0.15),
-                0 0 0 1px rgba(199, 125, 255, 0.2);
+        .contact-row {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--gray-text);
+            font-size: 0.95rem;
+            text-decoration: none;
             transition: all 0.3s ease;
+            padding: 8px 12px;
+            border-radius: 8px;
+            background: rgba(114, 22, 244, 0.05);
+            border: 1px solid rgba(199, 125, 255, 0.2);
         }
 
-        .about-image img:hover {
-            transform: translateY(-4px);
-            box-shadow: 
-                0 28px 56px rgba(114, 22, 244, 0.2),
-                0 0 0 1px rgba(199, 125, 255, 0.3);
+        .contact-item:hover {
+            color: var(--primary-purple);
+            background: rgba(114, 22, 244, 0.1);
+            border-color: rgba(199, 125, 255, 0.4);
+            transform: translateY(-2px);
+            text-decoration: none;
         }
+
+        .contact-item svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
+
+        .linkedin-btn {
+            background: #0077b5 !important;
+            color: white !important;
+            border-color: #0077b5 !important;
+        }
+
+        .linkedin-btn:hover {
+            background: #005885 !important;
+            color: white !important;
+            border-color: #005885 !important;
+        }
+
 
         /* Testimonials - Frosted Glass Effect */
         .testimonials {
@@ -801,48 +929,6 @@
             box-shadow: 0 12px 30px rgba(114, 22, 244, 0.15);
         }
 
-        /* Enhanced About Image */
-        .about-image {
-            position: relative;
-        }
-
-        .about-image::before {
-            content: '';
-            position: absolute;
-            top: -20px;
-            left: -20px;
-            right: 20px;
-            bottom: 20px;
-            background: var(--gradient-primary);
-            border-radius: 24px;
-            opacity: 0.1;
-            z-index: -1;
-            transition: all 0.4s ease;
-        }
-
-        .about-image:hover::before {
-            opacity: 0.15;
-            transform: rotate(-2deg);
-        }
-
-        .about-image img {
-            width: 100%;
-            border-radius: 24px;
-            box-shadow: 
-                0 20px 40px rgba(114, 22, 244, 0.15),
-                0 0 0 1px rgba(199, 125, 255, 0.2);
-            transition: all 0.4s ease;
-            position: relative;
-            z-index: 2;
-        }
-
-        .about-image img:hover {
-            transform: translateY(-8px) rotate(1deg);
-            box-shadow: 
-                0 32px 64px rgba(114, 22, 244, 0.25),
-                0 0 0 1px rgba(199, 125, 255, 0.4);
-        }
-
         /* Enhanced CTA Section */
         .cta {
             background: var(--light-bg);
@@ -911,14 +997,14 @@
                 padding: 0 20px;
             }
             
-            .hero-content {
+            .hero-content, .about-content {
                 grid-template-columns: 1fr;
                 gap: 60px;
             }
-            
-            .about-content {
+
+            .team-grid {
                 grid-template-columns: 1fr;
-                gap: 60px;
+                gap: 40px;
             }
         }
 
@@ -996,6 +1082,15 @@
             .feature-card {
                 padding: 36px 28px;
             }
+
+            .team-card {
+                padding: 36px 28px;
+            }
+
+            .team-image {
+                width: 160px;
+                height: 160px;
+            }
             
             .section {
                 padding: 60px 0;
@@ -1020,8 +1115,13 @@
                 gap: 30px;
             }
             
-            .feature-card { 
+            .feature-card, .team-card { 
                 padding: 32px 24px; 
+            }
+
+            .team-image {
+                width: 140px;
+                height: 140px;
             }
             
             .hero-buttons { 
@@ -1081,7 +1181,7 @@
                     <p class="lead" contenteditable="true">Helping companies select and connect to the right treasury technology – fast, unbiased, and vendor-smart.</p>
                     <div class="hero-buttons">
                         <a href="#openVideoModal" class="btn btn-primary">Explore Vendor Demos</a>
-                        <a href="https://aisbee08e5bdvaliantmaker.wpcomstaging.com/team/" class="btn btn-outline">Meet Our Team</a>
+                        <a href="#meet-the-team" class="btn btn-outline">Meet Our Team</a>
                     </div>
                 </div>
                 <div class="hero-image">
@@ -1118,7 +1218,7 @@
         </div>
     </section>
 
-    <!-- Features Section - Redesigned -->
+    <!-- Features Section -->
     <section class="features full-bg-section">
         <div class="container">
             <div class="features-header">
@@ -1141,8 +1241,8 @@
                 <!-- Live Selection Workshop -->
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <svg class="icon-people" viewBox="0 0 24 24">
-                            <path d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zM4 18v-4h3v4h2v-7.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5V18h2v-6h1.5l1.19-3.11c.15-.4.49-.66.89-.76.4-.1.83 0 1.14.25L19 9v1h2V8.5c0-.28-.11-.53-.29-.71L18 5.5c-.39-.39-.9-.59-1.41-.59-.51 0-1.02.2-1.41.59L13 7.68V6c0-1.1-.9-2-2-2s-2 .9-2 2v2.68L6.82 5.5c-.39-.39-.9-.59-1.41-.59-.51 0-1.02.2-1.41.59L2.29 7.79C2.11 7.97 2 8.22 2 8.5V10h2V9l1.32-1.32c.31-.25.74-.35 1.14-.25.4.1.74.36.89.76L8.5 11H10v7h2v-2H4z"/>
+                        <svg class="icon-workshop" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
                         </svg>
                     </div>
                     <div class="feature-subtitle" contenteditable="true">Group Sessions</div>
@@ -1165,20 +1265,87 @@
         </div>
     </section>
 
-    <!-- About Preview Section -->
-    <section class="about-preview section full-bg-section">
+    <!-- Team Section -->
+    <section class="team full-bg-section" id="meet-the-team">
         <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2 contenteditable="true">We're On Your Side of the Table</h2>
-                    <p contenteditable="true">Founded by treasury professionals, Real Treasury is built to support internal finance teams with selecting the best tools for your company with confidence.</p>
-                    <p contenteditable="true">We don't take money from vendors – our only client is you. This means unbiased recommendations and tools designed for your success, not vendor margins.</p>
-                    <a href="https://aisbee08e5bdvaliantmaker.wpcomstaging.com/team/" class="btn btn-outline">Meet Our Team</a>
+             <div class="features-header">
+                <h2 contenteditable="true">Meet the Founders</h2>
+                <p class="lead" contenteditable="true">We're on your side of the table. Founded by treasury professionals, Real Treasury is built to support internal finance teams with selecting the best tools for your company with confidence.</p>
+            </div>
+            <div class="team-grid">
+                <!-- Tim's Bio -->
+                <div class="team-card">
+                    <div class="team-image">
+                        <div class="image-editor">
+                            <img src="https://aisbee08e5bdvaliantmaker.wpcomstaging.com/wp-content/uploads/2025/06/Tim-Schultz-website-headshot_046.jpg" alt="Tim - Co-Founder" data-editable-image="true">
+                            <button class="edit-image-btn" onclick="editImage(this)">✏️ Edit</button>
+                        </div>
+                    </div>
+                    <div class="team-role" contenteditable="true">Co-Founder & PRINCIPAL Consultant</div>
+                    <h3 class="team-name" contenteditable="true">Tim</h3>
+                    <p class="team-bio" contenteditable="true">Former treasury lead with 15+ years optimizing cash management and risk operations. Tim founded Real Treasury to democratize access to treasury technology insights and help teams make confident, informed decisions without vendor bias.</p>
+                    
+                    <div class="team-contact">
+                        <div class="contact-row">
+                            <a href="https://www.linkedin.com/in/schultzctp/" target="_blank" class="contact-item linkedin-btn">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                                </svg>
+                                LinkedIn
+                            </a>
+                            <a href="mailto:tschultz@realtreasury.com" class="contact-item">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                                </svg>
+                                tschultz@realtreasury.com
+                            </a>
+                        </div>
+                        <div class="contact-row">
+                            <div class="contact-item">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                </svg>
+                                Tampa, FL
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="about-image">
-                    <div class="image-editor">
-                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Treasury Team Collaboration" data-editable-image="true">
-                        <button class="edit-image-btn" onclick="editImage(this)">✏️ Edit</button>
+
+                <!-- Tracey's Bio -->
+                <div class="team-card">
+                    <div class="team-image">
+                        <div class="image-editor">
+                            <img src="https://aisbee08e5bdvaliantmaker.wpcomstaging.com/wp-content/uploads/2025/06/Tracey-Headshot-Website.png" alt="Tracey - Co-Founder" data-editable-image="true">
+                            <button class="edit-image-btn" onclick="editImage(this)">✏️ Edit</button>
+                        </div>
+                    </div>
+                    <div class="team-role" contenteditable="true">Co-Founder & PRINCIPAL CONSULTANT</div>
+                    <h3 class="team-name" contenteditable="true">Tracey</h3>
+                    <p class="team-bio" contenteditable="true">Treasury operations expert specializing in system implementations and process optimization. Tracey leads client engagements and workshop facilitation, ensuring every treasury team gets the strategic support they need during technology transitions.</p>
+                    
+                    <div class="team-contact">
+                        <div class="contact-row">
+                            <a href="https://www.linkedin.com/in/traceyfergusonknight/" target="_blank" class="contact-item linkedin-btn">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                                </svg>
+                                LinkedIn
+                            </a>
+                            <a href="mailto:tknight@realtreasury.com" class="contact-item">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                                </svg>
+                                tknight@realtreasury.com
+                            </a>
+                        </div>
+                        <div class="contact-row">
+                            <div class="contact-item">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                </svg>
+                                Dallas, TX
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1225,54 +1392,20 @@
             console.log('=== MODAL BUTTON DEBUG ===');
             const modalButtons = document.querySelectorAll('a[href="#openVideoModal"]');
             console.log('Found modal buttons:', modalButtons.length);
-            console.log('Modal buttons found:', modalButtons);
             
-            // Test each modal button
             modalButtons.forEach((button, index) => {
-                console.log(`Button ${index + 1}:`, button.textContent.trim(), button);
-                
                 button.addEventListener('click', function(e) {
                     console.log('=== MODAL BUTTON CLICKED ===');
-                    console.log('Button text:', this.textContent.trim());
-                    console.log('Button href:', this.href);
-                    console.log('Button element:', this);
-                    console.log('Event:', e);
-                    
-                    // Check if we're in an iframe
                     if (window !== window.parent) {
-                        console.log('We are inside an iframe - this might be the issue!');
-                        console.log('Parent window:', window.parent);
-                        
-                        // Try to trigger modal on parent window
-                        try {
-                            if (window.parent.document) {
-                                console.log('Trying to access parent window...');
-                                // Look for modal in parent window
-                                const parentModalTrigger = window.parent.document.querySelector('a[href="#openVideoModal"]');
-                                if (parentModalTrigger) {
-                                    console.log('Found modal trigger in parent, clicking it...');
-                                    e.preventDefault();
-                                    parentModalTrigger.click();
-                                    return;
-                                }
-                            }
-                        } catch (err) {
-                            console.log('Cannot access parent window (cross-origin):', err);
-                        }
-                        
-                        // Alternative: try to post message to parent
                         try {
                             window.parent.postMessage({ 
                                 action: 'openVideoModal',
                                 source: 'treasury-homepage'
                             }, '*');
-                            console.log('Posted message to parent window');
                             e.preventDefault();
                         } catch (err) {
                             console.log('Could not post message to parent:', err);
                         }
-                    } else {
-                        console.log('We are in the main window');
                     }
                 });
             });
@@ -1300,17 +1433,13 @@
             editModeEnabled = !editModeEnabled;
             
             if (editModeEnabled) {
-                // Enable edit mode
-                editableElements.forEach(el => {
-                    el.setAttribute('contenteditable', 'true');
-                });
+                editableElements.forEach(el => el.setAttribute('contenteditable', 'true'));
                 editButton.innerHTML = '✏️ Edit Mode ON';
                 editButton.classList.remove('edit-off');
             } else {
-                // Disable edit mode
                 editableElements.forEach(el => {
                     el.setAttribute('contenteditable', 'false');
-                    el.style.boxShadow = ''; // Remove any active focus styles
+                    el.style.boxShadow = '';
                 });
                 editButton.innerHTML = '👁️ Edit Mode OFF';
                 editButton.classList.add('edit-off');
@@ -1323,13 +1452,12 @@
             const blob = new Blob([htmlContent], { type: 'text/html' });
             const link = document.createElement('a');
             link.href = URL.createObjectURL(blob);
-            link.download = 'real-treasury-homepage-fixed.html';
+            link.download = 'real-treasury-homepage-updated.html';
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
             URL.revokeObjectURL(link.href);
             
-            // Enhanced feedback
             const saveBtn = document.querySelector('.save-btn');
             const originalHTML = saveBtn.innerHTML;
             saveBtn.innerHTML = '✅ <span>Saved!</span>';
@@ -1354,11 +1482,8 @@
             const newSrc = prompt('Enter new image URL:', currentSrc);
             if (newSrc && newSrc !== currentSrc) {
                 img.src = newSrc;
-                
-                // Show feedback
                 button.innerHTML = '✅ Updated';
                 button.style.background = 'rgba(76, 175, 80, 0.9)';
-                
                 setTimeout(() => {
                     button.innerHTML = '✏️ Edit';
                     button.style.background = 'rgba(114, 22, 244, 0.9)';
@@ -1372,22 +1497,9 @@
                 e.preventDefault();
                 saveHTML();
             }
-            // Toggle edit mode with Ctrl/Cmd + E
             if ((e.ctrlKey || e.metaKey) && e.key === 'e') {
                 e.preventDefault();
                 toggleEditMode();
-            }
-        });
-
-        // Auto-save functionality
-        let autoSaveTimer;
-        document.addEventListener('input', function(e) {
-            if (e.target.contentEditable === 'true' && editModeEnabled) {
-                clearTimeout(autoSaveTimer);
-                autoSaveTimer = setTimeout(() => {
-                    console.log('Auto-save triggered (enable by uncommenting saveHTML() below)');
-                    // saveHTML(); // Uncomment to enable auto-save
-                }, 15000); // Auto-save after 15 seconds of inactivity
             }
         });
 
